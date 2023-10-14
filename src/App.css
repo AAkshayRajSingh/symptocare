@@ -1,9 +1,13 @@
+/* App.css */
+
+/* Reset font size and calculate font size based on vw (viewport width) */
 .App {
   text-align: center;
+  font-size: 1.5rem; /* Adjust the font size as needed */
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vw; /* Adjust the height based on the screen size */
   pointer-events: none;
 }
 
@@ -20,7 +24,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 2rem; /* Adjust the font size as needed */
   color: white;
 }
 
@@ -35,4 +39,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body {
+  background-color: pink;
 }
