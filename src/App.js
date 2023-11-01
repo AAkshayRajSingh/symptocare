@@ -1,9 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarComponent from './components/Navbar';
 import { Container } from 'react-bootstrap';
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Cancel from './pages/Cancel';
 import Store from './pages/Store';
 import Success from './pages/Success';
@@ -11,31 +10,30 @@ import CartProvider from './CartContext.js';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Welcome from './pages/Welcome';
+import Treatment from './pages/treatment';
 import OTPVerification from './pages/OTPVerification';
+import './App.css'; // Import your custom CSS file
+
 function App() {
   return (
-    
     <CartProvider>
-    <Container>
-    <NavbarComponent></NavbarComponent>
-    <BrowserRouter>
+      <Container className="main-container">
+        <NavbarComponent></NavbarComponent>
+        <BrowserRouter>
           <Routes>
-            <Route   index  element={<Welcome />} />
+            <Route index element={<Welcome />} />
             <Route path="login" element={<Login />} />
             <Route path="otp-verification" element={<OTPVerification />} />
             <Route path="success" element={<Success />} />
             <Route path="cancel" element={<Cancel />} />
-            <Route path="Store"element={<Store />} />
-            <Route path="Register" element={<Register/>} />
+            <Route path="Store" element={<Store />} />
+            <Route path="Treatment" element={<Treatment />} />
+            <Route path="Register" element={<Register />} />
           </Routes>
         </BrowserRouter>
-    </Container>
-    
+      </Container>
     </CartProvider>
-        
-       
   );
 }
 
-
-export default App;  
+export default App;

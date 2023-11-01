@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import './Register.css'; // Import your custom CSS file
 import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
-
+import register from '/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/images/pregister-removebg-preview.png';
 function RegistrationForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,6 +25,7 @@ function RegistrationForm() {
 
   return (
     <div className="register-container">
+    <img src={register} alt="Register"/>
       <h1>Registration</h1>
       <div className="input-container">
         <label>Email</label>

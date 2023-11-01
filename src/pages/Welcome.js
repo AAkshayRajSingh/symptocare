@@ -4,10 +4,10 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './Welcome.css';
-import caveImage from '/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/images/cave.jpeg';
-import geminiArtImage from '/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/images/geminiart.jpeg';
-import monaLisaImage from '/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/images/astronaut...jpeg';
-import imh1 from '/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/images/vintagecar.jpeg';
+import caveImage from '/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/images/hospital.png';
+import geminiArtImage from '/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/images/doc-removebg-preview.png';
+import monaLisaImage from '/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/images/nurse-removebg-preview.png';
+import imh1 from '/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/images/hospi.png';
 
 
 function Welcome() {
@@ -24,7 +24,9 @@ function Welcome() {
   };
 
   return (
-    <div className="welcome-container">
+    <div className="welcome-container" style={
+      {backgroundImage:"/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/images/Screenshot 2023-10-30 at 9.09.59 PM.png"}
+    }>
       <Slider {...sliderSettings}>
         {images.map((image, index) => (
           <div key={index} className="slider-image">
@@ -32,8 +34,8 @@ function Welcome() {
           </div>
         ))}
       </Slider>
-      <h1 className="welcome-title">Welcome to ArtifyAI</h1>
-      <p className="welcome-text">Please login to get started.</p>
+      <h1 className="welcome-title">Welcome to SymptoCare</h1>
+      <p className="welcome-text">Please login to get started Into the world of Health care Assistance.</p>
       <Link to="/login" className="login-button">Login</Link>
     </div>
   );
