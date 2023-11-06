@@ -1,72 +1,87 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Button from "react-bootstrap/Button";
+import "./treatment.css"; // Import your custom CSS file
+import imgsrc1 from "/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/images/treatment_hospi.png";
+import imgsrc2 from "/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/images/chat.png";
+import imgsrc3 from "/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/images/search.png";
+import imgsrc4 from "/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/images/tick.png";
+import pharma1 from "/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/images/pharma1.png";
+import imgsrc from "/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/images/symptoms classifier.png";
 import "./treatment.css"; // Import your custom CSS file
 
 export default function Treatment() {
+  const functionalityData = [
+    {
+      name: "Symptoms Classifier",
+      imageSrc: imgsrc, // Replace with your image URL
+      link: "http://localhost:8866/",
+    },
+    {
+      name: "Treatment Recommendation",
+      imageSrc: imgsrc1, // Replace with your image URL
+      link: "http://localhost:8867/",
+    },
+    {
+      name: "Disease Information Search",
+      imageSrc: imgsrc3, // Replace with your image URL
+      link: "http://localhost:8868/",
+    },
+    {
+      name: "Disease Spelling Correction",
+      imageSrc: imgsrc4, // Replace with your image URL
+      link: "http://localhost:8869/",
+    },
+    {
+      name: "Interactive Chat",
+      imageSrc: imgsrc2, // Replace with your image URL
+      link: "http://localhost:8870/",
+    },
+    {
+      name: "Buy From Pharmacy",
+      imageSrc: pharma1, // Replace with your image URL
+      link: "/store" // Remove the trailing comma here
+    }
+  ];
+
   return (
     <div className="container">
-      <h1>Welcome to SymptoCare</h1>
-      <p>
-        SymptoCare is your trusted healthcare companion. Explore our services
-        and features:
+      <h1
+        style={{
+          fontSize: "40px",
+          color: "Black",
+          textAlign: "center",
+          padding: "10px",
+          fontFamily: "Playfair Display",
+        }}
+      >
+        Welcome to SymptoCare
+      </h1>
+      <p
+        style={{
+          fontSize: "30px",
+          color: "Green",
+          textAlign: "center",
+          padding: "10px",
+          fontFamily: "Playfair Display",
+        }}
+      >
+        SymptoCare is your trusted healthcare companion. Explore our services and features!
       </p>
 
       <div className="grid-container">
-        <div className="grid-item">
-          <h2>Symptoms Classifier</h2>
-          <p>
-            Use our advanced AI to classify your symptoms and get preliminary
-            information about potential health issues.
-          </p>
-          <Link to="https://chat.openai.com/c/bb49b82d-6759-4be9-87d8-d740400c25af">
-            <Button className="Button primary">Symptoms Classifier</Button>
-          </Link>
-        </div>
-
-        <div className="grid-item">
-          <h2>Treatment Recommendation</h2>
-          <p>
-            Get personalized treatment recommendations based on your symptoms and
-            medical history.
-          </p>
-          <Link to="/treatment-recommendation">
-            <Button className="Button primary">Treatment Recommendation</Button>
-          </Link>
-        </div>
-
-        <div className="grid-item">
-          <h2>Disease Information Search</h2>
-          <p>Search for detailed information on various diseases and conditions.</p>
-          <Link to="/disease-information-search">
-            <Button className="Button primary">Disease Information Search</Button>
-          </Link>
-        </div>
-
-        <div className="grid-item">
-          <h2>Disease Spelling Correction</h2>
-          <p>
-            Correct common spelling errors in disease names for more accurate
-            information.
-          </p>
-          <Link to="/disease-spelling-correction">
-            <Button className="Button primary">Disease Spelling Correction</Button>
-          </Link>
-        </div>
-
-        <div className="grid-item">
-          <h2>Interactive Chat</h2>
-          <p>Chat with our AI assistant to get instant answers to your queries.</p>
-          <Link to="https://chat.openai.com/c/bb49b82d-6759-4be9-87d8-d740400c25af">
-            <Button className="Button primary">Interactive Chat</Button>
-          </Link>
-        </div>
-
-        <div className="grid-item">
-          <Link to="/store">
-            <Button className="Button success">Buy From Pharmacy</Button>
-          </Link>
-        </div>
+        {functionalityData.map((functionality, index) => (
+          <div className="grid-item" key={index}>
+            <a href={functionality.link} target="_blank" rel="noopener noreferrer">
+              <img
+                src={functionality.imageSrc}
+                alt={functionality.name}
+                className="functionality-image"
+      
+              />
+              <div className="functionality-name">{functionality.name}</div>
+            </a>
+          </div>
+        ))}
       </div>
     </div>
   );
