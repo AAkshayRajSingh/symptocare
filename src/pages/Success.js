@@ -1,20 +1,33 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Confetti from 'react-confetti';
+import img from '/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/images/Order Confirmation.gif';
+import '/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/pages/success.css';
 
 function Success() {
   useEffect(() => {
     // Clean up the confetti effect after 3 seconds
     const timer = setTimeout(() => {
       // Perform any necessary cleanup here
-    }, 3000);
+    }, 100);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div>
-      <h1>Success!</h1>
-      <h1>Artwork has been Purchased</h1>
+    <div className="success-container">
+      <div className="success-content">
+        <h1>Success!</h1>
+        <h1>Medicines have been Purchased!</h1>
+        <h1>We Wish you get well soon</h1>
+      </div>
+      <img src={img} alt="Celebration" className="celebration-gif" style={{ width: '500px' }} />
+
+      {/* "Know the Creators" button at the bottom and styled as a centered button */}
+      <div className="know-creators-container">
+        <Link to="/creators" className="know-creators-button-bottom">Know the Creators</Link>
+      </div>
+
       <Confetti
         width={window.innerWidth}
         height={window.innerHeight}

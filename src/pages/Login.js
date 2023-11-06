@@ -3,7 +3,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
-import users from "/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/registration-server/users.json"; // Import user data
+import users from "/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/userss.json"; // Import user data
+import loginImage from "/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/images/patient.png"; // Import your image
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -32,8 +33,11 @@ export default function Login() {
 
   return (
     <div className="Login">
+      <div className="login-header">
+        <img src={loginImage} alt="Login" />
+        <h2>Patient Login</h2>
+      </div>
       <Form onSubmit={handleSubmit}>
-        <h2>Login</h2>
         <Form.Group controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -53,14 +57,16 @@ export default function Login() {
         </Form.Group>
         {error && <div className="error-message">{error}</div>}
         <Button
-          variant="primary"
-          block
-          size="lg"
-          type="submit"
-          disabled={!validateForm()}
-        >
-          Login
-        </Button>
+        variant="primary"
+        block
+        size="lg"
+        type="submit"
+        disabled={!validateForm()}
+        style={{ backgroundColor: 'cyan', borderColor: 'cyan',color:'black' }}
+      >
+        Login
+      </Button>
+      
         <div className="register-link">
           Not registered? <Link to="/register">Register</Link>
         </div>

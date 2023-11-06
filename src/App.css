@@ -32,6 +32,11 @@
   color: #61dafb;
 }
 
+.main-container {
+  background-color: white; /* Dark blue color */
+  color: black; /* Text color for better contrast */
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -42,5 +47,49 @@
 }
 
 body {
-  background-color: pink;
+  background-color: white; /* Dark blue color */
+  color: black; /* Text color for better contrast */
+}
+/* App.css */
+
+/* ... (other CSS rules) */
+
+.welcome-title {
+  font-size: 32px;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 1px solid #333;
+  position: relative;
+  width: 100%;
+  animation: typing 3s steps(40, end), blink-caret 0.5s step-end infinite;
+}
+
+.welcome-text {
+  font-size: 18px;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 1px solid #333;
+  position: relative;
+  width: 100%;
+  animation: typing 3s steps(60, end), blink-caret 0.5s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #333;
+  }
 }

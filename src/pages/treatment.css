@@ -1,0 +1,70 @@
+/* Reset some default styles */
+body, div, h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Center align text and buttons */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 40px;
+  color: black;
+  padding: 20px;
+  font-family: "Playfair Display", sans-serif;
+}
+
+p {
+  font-size: 30px;
+  color: green;
+  padding: 10px;
+  font-family: "Playfair Display", sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-item {
+  flex: 1;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 250%;
+ /* Specify a unit like 'px' or 'rem' for height */
+}
+
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.blinking-image {
+  animation: blink 2s infinite;
+}
+
+
+.functionality-image {
+  height: 250px; /* Adjust the top margin to control the alignment */
+}

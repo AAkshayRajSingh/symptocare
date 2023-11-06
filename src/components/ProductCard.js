@@ -1,7 +1,7 @@
 import { Card, Button, Form, Row, Col } from 'react-bootstrap';
 import { useContext } from 'react';
 import { CartContext } from '../CartContext';
-
+import "/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/style.css";
 function ProductCard(props) { // props.product is the product we are selling
 const product=props.product;
 const cart = useContext(CartContext);

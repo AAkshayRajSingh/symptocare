@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Link, useNavigate } from "react-router-dom";
 import "/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/pages/OPTVerification.css";
+import otpImage from "/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/images/Screenshot_2023-10-30_at_11.42.07_PM-removebg-preview.png"; // Import your image
 
 const LOCKOUT_DURATION = 30000; // Lockout duration in milliseconds (30 seconds)
 
@@ -42,9 +43,13 @@ export default function OTPVerification() {
       return;
     }
 
-    if (otp === "0000") {
+    // You can implement custom logic for OTP verification here
+    // For example, you could send the entered OTP to a server for verification
+
+    // For simplicity, we assume the OTP is correct if it's 4 digits
+    if (/^\d{4}$/.test(otp)) {
       // Successful OTP verification, navigate to the store
-      navigate("/store");
+      navigate("/treatment");
     } else {
       setError("Incorrect OTP. Please try again.");
       setLocked(true); // Lock the user after a failed attempt
@@ -53,17 +58,19 @@ export default function OTPVerification() {
 
   return (
     <div className="OTPVerification">
+      <img src={otpImage} alt="OTP" className="otp-image" style={{ maxWidth: "250px" }} /> {/* Set the max width */}
       <Form onSubmit={handleSubmit}>
         <h2>OTP Verification</h2>
         <p>Please check your email for the OTP.</p>
         <Form.Group controlId="otp">
           <Form.Label>Enter OTP</Form.Label>
-          <Form.Control
-            autoFocus
-            type="password"
-            value={otp}
-            onChange={(e) => setOtp(e.target.value)}
-          />
+          <div className="otp-input">
+            <Form.Control
+              type="password"
+              value={otp}
+              onChange={(e) => setOtp(e.target.value)}
+            />
+          </div>
         </Form.Group>
         {error && <div className="error-message">{error}</div>}
         <Button

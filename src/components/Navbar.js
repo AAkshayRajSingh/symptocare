@@ -1,8 +1,9 @@
-import {Button, Container, Navbar, Modal} from 'react-bootstrap';
+import { Button, Container, Navbar, Modal } from 'react-bootstrap';
 import { useState, useContext } from 'react';
 import { CartContext } from "../CartContext";
 import CartProduct from './CartProduct';
-
+import cartIcon from '/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/images/download (1).png'; // Import the cart image
+import logo from '/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/images/symtocare.png';
 function NavbarComponent() {
     const cart = useContext(CartContext);
 
@@ -16,11 +17,11 @@ function NavbarComponent() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({items: cart.items})
+            body: JSON.stringify({ items: cart.items })
         }).then((response) => {
             return response.json();
         }).then((response) => {
-            if(response.url) {
+            if (response.url) {
                 window.location.assign(response.url); // Forwarding user to Stripe
             }
         });
@@ -28,14 +29,26 @@ function NavbarComponent() {
 
     const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0);
 
+    // Define a style for the cart button
+    const cartButtonStyle = {
+        backgroundColor: 'cyan', // Background color to cyan
+        borderColor: 'cyan', // Border color to cyan
+        color: 'black', // Text color to white
+    };
+
     return (
         <>
             <Navbar expand="sm">
-            <Navbar.Brand href="/" style={{ color: 'blue', fontFamily: 'Playfair Display',  fontSize: '34px' }}>ArtifyAI</Navbar.Brand>
-
+            <Navbar.Brand href="/">
+            <img src={logo} style={{ width: '150px', height: '100px' }} />
+        </Navbar.Brand>
+        
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
-                    <Button onClick={handleShow}>Cart ({productsCount} Items)</Button>
+                    <Button onClick={handleShow} style={cartButtonStyle}>
+                        <img src={cartIcon} alt="Cart" style={{ width: '30px', height: '30px', marginRight: '10px' }} />
+                        Cart ({productsCount} Items)
+                    </Button>
                 </Navbar.Collapse>
             </Navbar>
             <Modal show={show} onHide={handleClose}>
@@ -46,7 +59,7 @@ function NavbarComponent() {
                     {productsCount > 0 ?
                         <>
                             <p>Items in your cart:</p>
-                            {cart.items.map( (currentProduct, idx) => (
+                            {cart.items.map((currentProduct, idx) => (
                                 <CartProduct key={idx} id={currentProduct.id} quantity={currentProduct.quantity}></CartProduct>
                             ))}
 
@@ -56,7 +69,7 @@ function NavbarComponent() {
                                 Purchase items!
                             </Button>
                         </>
-                    :
+                        :
                         <h1>There are no items in your cart!</h1>
                     }
                 </Modal.Body>
