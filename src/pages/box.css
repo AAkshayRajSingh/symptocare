@@ -1,0 +1,20 @@
+/* box.css */
+
+/* Style for the clickable boxes */
+.box {
+    background-color: #f0f0f0; /* Box background color */
+    padding: 20px; /* Spacing inside the box */
+    text-align: center; /* Center-align text within the box */
+    font-size: 20px; /* Text size */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Cursor style on hover */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+    margin: 10px; /* Margin between boxes */
+  }
+  
+  /* Change background color on hover */
+  .box:hover {
+    background-color: #e0e0e0;
+  }
+  

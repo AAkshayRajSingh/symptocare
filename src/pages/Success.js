@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Confetti from 'react-confetti';
-import Fireworks from 'react-fireworks';
 import img from '/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/images/Order Confirmation.gif';
 import '/Users/a.akshayrajsingh/Desktop/ecommerce/store/src/pages/success.css';
 
@@ -22,6 +22,11 @@ function Success() {
         <h1>We Wish you get well soon</h1>
       </div>
       <img src={img} alt="Celebration" className="celebration-gif" style={{ width: '500px' }} />
+
+      {/* "Know the Creators" button at the bottom and styled as a centered button */}
+      <div className="know-creators-container">
+        <Link to="/creators" className="know-creators-button-bottom">Know the Creators</Link>
+      </div>
 
       <Confetti
         width={window.innerWidth}

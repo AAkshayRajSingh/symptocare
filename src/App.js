@@ -12,6 +12,7 @@ import Register from './pages/Register';
 import Welcome from './pages/Welcome';
 import Treatment from './pages/treatment';
 import OTPVerification from './pages/OTPVerification';
+import Creators from './pages/creators';
 import './App.css'; // Import your custom CSS file
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route path="success" element={<Success />} />
             <Route path="cancel" element={<Cancel />} />
             <Route path="Store" element={<Store />} />
+            <Route path="Creators" element={<Creators />} />
             <Route path="Treatment" element={<Treatment />} />
             <Route path="Register" element={<Register />} />
           </Routes>

@@ -11,7 +11,7 @@ function Store() {
         <>
         <div style={pageStyle}>
             <h1 style={{ fontSize: '60px', color: 'Black', textAlign: 'center', padding: '30px', fontFamily: 'Playfair Display' }}>Welcome to the SymptoCare Pharma!</h1>
-            <h1 style={{ fontSize: '40px', color: 'cyan', textAlign: 'center', padding: '20px', fontFamily: 'Playfair Display' }}>A Onestop Shop for medical needs</h1>
+            <h1 style={{ fontSize: '40px', color: 'green', textAlign: 'center', padding: '20px', fontFamily: 'Playfair Display' }}>A Onestop Shop for medical needs</h1>
             <Row xs={1} md={3} className="g-4">
                 {productsArray.map((product, idx) => (
                     <Col align="center" key={idx}>
